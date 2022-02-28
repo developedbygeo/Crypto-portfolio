@@ -13,6 +13,7 @@ const myTheme: DefaultTheme = {
   colors: {
     mainBg: '#1D2024',
     accent: '#DEC16D',
+    accentRGB: '222, 193, 109',
     secondary: '#2A2B31',
     mainText: '#eee',
     secondaryText: '#606166',
