@@ -1,39 +1,47 @@
 import styled from 'styled-components';
-import { flexMixin, customContainer } from '../../shared/mixins';
+import { flexMixin, customContainer, maxContainer, colorInteract } from '../../shared/mixins';
+import { devices } from '../../shared/breakpoints';
 
 const StyledHeader = styled.header`
-  height: 10vh;
-  width: 100%;
-  background: ${({ theme }) => theme.colors.deepBlack};
+    height: 10vh;
+    width: 100%;
+    background: ${({ theme }) => theme.colors.deepBlack};
 
-  & > div {
-    ${flexMixin('space-between', 'center', 'row')};
-    ${customContainer('100', '90')};
-    margin: auto;
-  }
-  button {
-    background: transparent;
-    border: none;
-    outline: none;
-    height: 50%;
-    transition: all 200ms ease-in-out;
-    & > svg {
-      color: ${({ theme }) => theme.colors.mainText};
-      width: 5rem;
-      &:hover {
-        color: ${({ theme }) => theme.colors.accent};
-      }
+    & > .container {
+        ${flexMixin('space-between', 'center', 'row')};
+        ${customContainer('100', '90')};
+        margin: auto;
     }
-  }
 
-  a {
-    height: 100%;
-    ${flexMixin('center', 'center', 'column')}
-    & > svg {
-      max-width: 15rem;
-      max-height: 80%;
+    .menu {
+        background: transparent;
+        height: auto;
+        display: flex;
+        border-radius: 50%;
+        border: none;
+        transition: all 100ms ease-in-out;
+        & > svg {
+            color: ${({ theme }) => theme.colors.mainText};
+            width: 5rem;
+            ${colorInteract}
+        }
+        @media ${devices.tablet} {
+            display: none;
+        }
     }
-  }
+
+    .logo {
+        height: 100%;
+        ${flexMixin('center', 'center', 'column')}
+        & > svg {
+            ${maxContainer()}
+        }
+    }
+    .desktop-nav {
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
 `;
 
 export default StyledHeader;
