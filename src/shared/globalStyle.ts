@@ -93,6 +93,7 @@ li,
 a {
   font-size: 1.8rem;
   font-family: 'Roboto', sans-serif;
+  color: ${({ theme }) => theme.colors.mainText};
 }
 button{
   cursor: pointer;
