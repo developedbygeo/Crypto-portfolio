@@ -1,10 +1,15 @@
 import styled, { css } from 'styled-components';
-import { colorPress } from '../../shared/mixins';
+import { colorPress, colorInteract } from '../../shared/mixins';
 
-interface IBtnProps {
+type IBtnProps = {
     ctaAltHover?: boolean;
     alignSelf?: string;
-}
+};
+
+type IEmptyBtnProps = {
+    maxWidth?: string;
+    maxHeight?: string;
+} & IBtnProps;
 
 const standardEffect = css`
     background: ${({ theme }) => theme.colors.mainText};
@@ -54,9 +59,21 @@ export const CtaButton = styled.button`
         ${getCtaEffect}
     }
 `;
-export const EmptyButton = styled.button`
+export const EmptyButton = styled.button<IEmptyBtnProps>`
     width: auto;
     height: auto;
-    ${colorPress}
+    background: transparent;
+    display: flex;
+    border-radius: 50%;
+    border: none;
+    transition: all 100ms ease-in-out;
+    max-height: ${({ maxHeight }) => maxHeight || '5rem'};
+    max-width: ${({ maxWidth }) => maxWidth || '5rem'};
     ${getCtaEffect}
+    background: transparent;
+    ${colorPress}
+    &>svg {
+        color: ${({ theme }) => theme.colors.mainText};
+        ${colorInteract}
+    }
 `;
