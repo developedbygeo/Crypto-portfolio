@@ -59,7 +59,12 @@ main{
     width: 100vw;
     margin: auto;
     background: ${({ theme }) => theme.colors.mainBg};
+
 }
+#root{
+  background: ${({ theme }) => theme.colors.mainBg};
+}
+
 h1 {
   font-size: 3.2rem;
   font-family: 'Archivo Black', sans-serif;
