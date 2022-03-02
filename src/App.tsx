@@ -1,24 +1,34 @@
-import React from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import GlobalStyle from './shared/globalStyle';
+import { useAppDispatch } from './app/hooks';
 
-import Landing from './pages/Landing';
-import { myTheme } from './shared/theme';
 import Header from './components/Header/Header';
+import { getInitialData } from './features/initialData/dataSlice';
 
-function App() {
+// import Landing from './pages/Landing';
+const Landing = React.lazy(() => import('./pages/Landing'));
+const Markets = React.lazy(() => import('./pages/Markets'));
+
+const App = () => {
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(getInitialData());
+    }, []);
+
     return (
-        <ThemeProvider theme={myTheme}>
-            <GlobalStyle />
+        <>
             <Header />
             <main>
-                <Routes>
-                    <Route path="/" element={<Landing />} />
-                </Routes>
+                <Suspense fallback={<p>Loading</p>}>
+                    <Routes>
+                        <Route path="/" element={<Landing />} />
+                        <Route path="/markets" element={<Markets />} />
+                    </Routes>
+                </Suspense>
             </main>
-        </ThemeProvider>
+        </>
     );
-}
+};
 
 export default App;
