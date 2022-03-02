@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
 import Nav from './Nav';
-import { ReactComponent as LogoSVG } from '../../assets/safe.svg';
+import { ReactComponent as LogoSVG } from '../../assets/vault.svg';
 import { Menu } from '@styled-icons/material-rounded/Menu';
 import StyledHeader from './Header.styled';
 import { EmptyButton } from '../UI/Button.styled';
