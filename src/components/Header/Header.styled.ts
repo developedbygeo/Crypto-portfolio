@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { flexMixin, customContainer, maxContainer, colorInteract } from '../../shared/mixins';
+import { flexMixin, customContainer, maxContainer } from '../../shared/mixins';
 import { devices } from '../../shared/breakpoints';
 
 const StyledHeader = styled.header`
@@ -14,17 +14,6 @@ const StyledHeader = styled.header`
     }
 
     .menu {
-        background: transparent;
-        height: auto;
-        display: flex;
-        border-radius: 50%;
-        border: none;
-        transition: all 100ms ease-in-out;
-        & > svg {
-            color: ${({ theme }) => theme.colors.mainText};
-            width: 5rem;
-            ${colorInteract}
-        }
         @media ${devices.tablet} {
             display: none;
         }
@@ -32,6 +21,7 @@ const StyledHeader = styled.header`
 
     .logo {
         height: 100%;
+        max-width: 8rem;
         ${flexMixin('center', 'center', 'column')}
         & > svg {
             ${maxContainer()}
