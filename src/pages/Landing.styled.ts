@@ -7,7 +7,8 @@ interface LandingProps {
 }
 
 const StyledLanding = styled.section<LandingProps>`
-    padding: 3rem;
+    padding: 4vh;
+    padding-block: 15vh;
     background-size: cover;
     color: ${({ theme }) => theme.colors.mainText};
     background: url(${(props) => props.bg || '#1D2024'}) no-repeat center;
@@ -34,6 +35,9 @@ const StyledLanding = styled.section<LandingProps>`
             width: 60%;
             max-width: 25rem;
         }
+    }
+    .perf {
+        font-weight: 500;
     }
 `;
 
