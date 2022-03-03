@@ -7,6 +7,10 @@ export const StyledSection = styled.section`
     ${baseSectionStyling}
 
     .markets-header {
-        ${flexMixin('space-between', 'center', 'row')}
+        ${flexMixin('space-between', 'center', 'row')};
+    }
+    .search-wrap {
+        ${flexMixin('space-between', 'center', 'row')};
+        gap: 1.25rem;
     }
 `;
