@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { getLayout } from '../../shared/utils';
-import { IPropsLayout } from '../../shared/models/utils.model';
+import { PropsLayout } from '../../shared/models/utils.model';
 
 type IBaseProps = {
     w?: string;
@@ -15,7 +15,7 @@ type IProps = {
     customPosition?: string;
     top?: string;
 } & IBaseProps &
-    IPropsLayout;
+    PropsLayout;
 
 const baseCardSettings = css<IBaseProps>`
     width: ${({ w }) => w || 'auto'};
