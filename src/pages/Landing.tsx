@@ -1,4 +1,4 @@
-import StyledLanding from './Landing.styled';
+import StyledLanding from '../components/UI/Landing.styled';
 import backgroundImage from '../assets/backgroundLanding.webp';
 import { CtaButton } from '../components/UI/Button.styled';
 
@@ -10,7 +10,7 @@ const Landing = () => {
                     Stay <span>up to date</span> with your crypto.
                 </h1>
                 <h2>
-                    Track your portfolio <span className="perf">performance</span>
+                    Track your portfolio <span className="performance">performance</span> now.
                 </h2>
             </div>
             <div className="cta-wrap">
