@@ -2,11 +2,12 @@ import styled, { css } from 'styled-components';
 
 import { flexMixin, colorInteract, showActive } from '../../shared/mixins';
 import { devices } from '../../shared/breakpoints';
-import { IAppProps } from '../../shared/models/props.interface';
+import { AppProps } from '../../shared/models/props.model';
 
 const desktopNav = css`
     ${flexMixin('space-evenly', 'center', 'row')};
-    min-width: 70vw;
+    width: 70vw;
+    gap: 2rem;
     & > .divider {
         width: 0.1rem;
         height: 2rem;
@@ -39,7 +40,7 @@ const mobileNav = css`
     }
 `;
 
-const layoutSetup = ({ className }: IAppProps) => {
+const layoutSetup = ({ className }: AppProps) => {
     if (className === 'desktop-nav') {
         return desktopNav;
     }
