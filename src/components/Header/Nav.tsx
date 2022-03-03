@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 
-import { IAppProps } from '../../shared/models/props.interface';
+import { AppProps } from '../../shared/models/props.model';
 import StyledNav from './Nav.styled';
 
-const Nav = ({ className }: IAppProps) => {
+const Nav = ({ className }: AppProps) => {
     return (
         <StyledNav className={className}>
             <NavLink to="/markets">Markets</NavLink>
