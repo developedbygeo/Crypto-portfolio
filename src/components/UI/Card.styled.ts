@@ -1,20 +1,21 @@
 import styled, { css } from 'styled-components';
 import { getLayout } from '../../shared/utils';
-import { IPropsLayout } from '../../shared/models/utils.interface';
+import { IPropsLayout } from '../../shared/models/utils.model';
 
-interface IBaseProps {
+type IBaseProps = {
     w?: string;
     h?: string;
-}
+};
 
-interface IProps extends IBaseProps, IPropsLayout {
+type IProps = {
     p?: string;
     bgClr?: string;
     customMargin?: string;
     textAlign?: string;
     customPosition?: string;
     top?: string;
-}
+} & IBaseProps &
+    IPropsLayout;
 
 const baseCardSettings = css<IBaseProps>`
     width: ${({ w }) => w || 'auto'};
