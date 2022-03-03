@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { customContainer, flexMixin } from '../shared/mixins';
+import { customContainer, flexMixin } from '../../shared/mixins';
 
 interface LandingProps {
     bg?: string;
@@ -36,7 +36,7 @@ const StyledLanding = styled.section<LandingProps>`
             max-width: 25rem;
         }
     }
-    .perf {
+    .performance {
         font-weight: 500;
     }
 `;
