@@ -19,6 +19,7 @@ declare module 'styled-components' {
             mainText: string;
             secondaryText: string;
             black: string;
+            onyx: string;
             deepBlack: string;
             stonks: string;
             notStonks: string;

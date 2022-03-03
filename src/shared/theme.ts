@@ -18,6 +18,7 @@ const myTheme: DefaultTheme = {
         mainText: '#eee',
         secondaryText: '#606166',
         black: '#222',
+        onyx: '#3B3C3F',
         deepBlack: '#000000',
         stonks: '#7AC231',
         notStonks: '#DA0A0A',
