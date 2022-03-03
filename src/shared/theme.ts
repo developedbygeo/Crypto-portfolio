@@ -19,6 +19,8 @@ const myTheme: DefaultTheme = {
         secondaryText: '#606166',
         black: '#222',
         deepBlack: '#000000',
+        stonks: '#7AC231',
+        notStonks: '#DA0A0A',
     },
 };
 
