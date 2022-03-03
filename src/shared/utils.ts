@@ -1,7 +1,7 @@
 import { flexMixin, gridMixin } from './mixins';
-import { IPropsLayout } from './models/utils.interface';
+import { PropsLayout } from './models/utils.model';
 
-export const getLayout = ({ flexSettings, gridSettings }: IPropsLayout) => {
+export const getLayout = ({ flexSettings, gridSettings }: PropsLayout) => {
     if (flexSettings) {
         return flexMixin(flexSettings.justify, flexSettings.align, flexSettings.dir);
     } else if (gridSettings) {
