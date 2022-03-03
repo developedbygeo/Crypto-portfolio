@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import Nav from './Nav';
 import { ReactComponent as LogoSVG } from '../../assets/vault.svg';
@@ -9,7 +9,12 @@ import StyledHeader from './Header.styled';
 import { EmptyButton } from '../UI/Button.styled';
 
 const Header = () => {
-    const [isNavOpen, setNavIsOpen] = useState<boolean>(false);
+    const [isNavOpen, setNavIsOpen] = useState(false);
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        setNavIsOpen(false);
+    }, [pathname]);
 
     const navToggleHandler = () => setNavIsOpen((prevState) => !prevState);
 
